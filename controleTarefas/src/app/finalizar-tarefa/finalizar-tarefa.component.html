@@ -1,1 +1,101 @@
-<p>finalizar-tarefa works!</p>
+
+<div class="container-fluid">
+    <div class="row justify-content-center border border-danger my-2 p-1">
+        <div class="col-12 text-center">
+            <h3>
+                Finalizar Tarefa
+            </h3>
+        </div>
+        <div class="col-md-6 p-1 border border-success">
+
+            <form #formTarefa="ngForm">
+
+                <div class="form-group"> <!-- Titulo -->
+                    <label for="titulo">Titulo da tarefa</label>
+                    <input type="text" name="titulo" id="titulo" class="form-control" 
+                    [(ngModel)]="tarefa.titulo" #titulo="ngModel" minlength="3" required disabled>
+                    <div *ngIf="titulo.errors && (titulo.dirty || titulo.touched)"> <!-- ngIf -->
+                        <div class="alert alert-danger">
+                            <div [hidden]="!titulo.errors?.['required']"> <!-- [hidden] -->
+                                Digite o titulo da tarefa 
+                            </div>
+                            <div [hidden]="!titulo.errors?.['minlength']"> <!-- [hidden] -->
+                                O titulo deve conter no minimo 3 caracteres
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-6"> <!-- Data -->
+                    <label for="data">Data da tarefa</label>
+                    <input type="date" name="data" id="data" class="form-control"
+                    [(ngModel)]="tarefa.data" #data="ngModel" minlength="10" required disabled>
+                    <div *ngIf="data.errors && (data.dirty || data.touched)"> <!-- ngIf -->
+                        <div class="alert alert-danger">
+                            <div [hidden]="!data.errors?.['required']"> <!-- [hidden] -->
+                                Insira a data da tarefa 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição da tarefa </label>
+                    <input type="text" class="form-control" id="descricao" name="descricao"
+                        [(ngModel)]="tarefa.descricao" #descricao="ngModel"
+                        required minlength="5" disabled>
+                    <div *ngIf="descricao.errors && (descricao.dirty || descricao.touched)"> <!-- ngIf -->
+                        <div class="alert alert-danger">
+                            <div [hidden]="!descricao.errors?.['required']"> <!-- [hidden] -->
+                                Digite a descrição da tarefa 
+                            </div>
+                            <div [hidden]="!descricao.errors?.['minlength']"> <!-- [hidden] -->
+                                A descrição deve conter no minimo 5 caracteres
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="conclusao">Conclusão da tarefa </label>
+                    <input type="text" class="form-control" id="conclusao"  name="conclusao"
+                        [(ngModel)]="tarefa.conclusao" #conclusao="ngModel"
+                        required minlength="5">
+                    <div *ngIf="conclusao.errors && (conclusao.dirty || conclusao.touched)"> <!-- ngIf -->
+                        <div class="alert alert-danger">
+                            <div [hidden]="!conclusao.errors?.['required']"> <!-- [hidden] -->
+                                Digite a conclusao da tarefa 
+                            </div>
+                            <div [hidden]="!conclusao.errors?.['minlength']"> <!-- [hidden] -->
+                                A conclusao deve conter no minimo 5 caracteres
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group border border-danger p-1 text-center">
+
+                    <a href="#" class="btn btn-secondary mx-1">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
+                    </a>
+
+                    <button type="button" (click)="finalizar($event, tarefa)" [disabled]= "!formTarefa.form.valid" class="btn btn-success mx-1"> <!-- (click)="remover($event,tarefa)"-->
+                        <i class="fa-solid fa-hard-drive"></i> Finalizar tarefa
+                    </button> 
+
+                </div>
+
+            </form>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
