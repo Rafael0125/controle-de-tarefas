@@ -8,81 +8,61 @@
         </div>
         <div class="col-md-6 p-1 border border-success">
 
-            <form>
+            <form #formTarefa="ngForm">
 
                 <div class="form-group"> <!-- Titulo -->
                     <label for="titulo">Titulo da tarefa</label>
-                    <input type="text" name="titulo" id="titulo" class="form-control" minlength="3" required>
-
-                    <div> <!-- ngIf -->
-
+                    <input type="text" name="titulo" id="titulo" class="form-control" 
+                    [(ngModel)]="tarefa.titulo" #titulo="ngModel" minlength="3" required>
+                    <div *ngIf="titulo.errors && (titulo.dirty || titulo.touched)"> <!-- ngIf -->
                         <div class="alert alert-danger">
-                            <div> <!-- [hidden] -->
+                            <div [hidden]="!titulo.errors?.['required']"> <!-- [hidden] -->
                                 Digite o titulo da tarefa 
                             </div>
-                            <div> <!-- [hidden] -->
+                            <div [hidden]="!titulo.errors?.['minlength']"> <!-- [hidden] -->
                                 O titulo deve conter no minimo 3 caracteres
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
-                <div class="form-group"> <!-- Data -->
-
+                <div class="form-group col-6"> <!-- Data -->
                     <label for="data">Data da tarefa</label>
-                    <input type="date" name="data" id="data" class="form-control" required>
-
-                    <div> <!-- ngIf -->
-
+                    <input type="date" name="data" id="data" class="form-control"
+                    [(ngModel)]="tarefa.data" #data="ngModel" minlength="10" required>
+                    <div *ngIf="data.errors && (data.dirty || data.touched)"> <!-- ngIf -->
                         <div class="alert alert-danger">
-                            <div> <!-- [hidden] -->
+                            <div [hidden]="!data.errors?.['required']"> <!-- [hidden] -->
                                 Insira a data da tarefa 
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="form-group">
                     <label for="descricao">Descrição da tarefa </label>
-                    <textarea 
-                        class="form-control" 
-                        id="descricao" 
-                        rows="3"
-                        required
-                        minlength="5"
-                    ></textarea>    
-                    
-                    <div> <!-- ngIf -->
-
+                    <input type="text" class="form-control" id="descricao" id="descricao" name="descricao"
+                        [(ngModel)]="tarefa.descricao" #descricao="ngModel"
+                        required minlength="5">
+                    <div *ngIf="descricao.errors && (descricao.dirty || descricao.touched)"> <!-- ngIf -->
                         <div class="alert alert-danger">
-                            <div> <!-- [hidden] -->
+                            <div [hidden]="!descricao.errors?.['required']"> <!-- [hidden] -->
                                 Digite a descrição da tarefa 
                             </div>
-                            <div> <!-- [hidden] -->
+                            <div [hidden]="!descricao.errors?.['minlength']"> <!-- [hidden] -->
                                 A descrição deve conter no minimo 5 caracteres
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="form-group border">
                     <a href="#" class="btn btn-secondary">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
                     </a>
-
-                    <button type="button" class="btn btn-primary aling-self-right">
+                    <button type="button" (click)="inserir()" [disabled]= "!formTarefa.form.valid" class="btn btn-primary">
                         <i class=" fa fa-save" aria-hidden="true"></i> Salvar
-                    </button>
-        
-
-
-
+                    </button> 
                 </div>
 
             </form>

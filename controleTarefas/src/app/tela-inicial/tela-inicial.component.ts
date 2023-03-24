@@ -19,13 +19,15 @@ export class TelaInicialComponent implements OnInit {
   }
 
   listarTarefas(): Tarefa[]{
-    //return this.tarefaService.listarTarefas()
-    return [ 
-      new Tarefa(1,'Tarefa hardcode 1 ','25/04/2023','Meu aniversario'),
-      new Tarefa(2,'Tarefa hardcode 2 ','25/01/2023','Aniversario do meu pai'),
-      new Tarefa(3,'Tarefa hardcode 3 ','25/11/2023','Aniversario da Dani'),
-      new Tarefa(4,'Tarefa hardcode 4 ','29/07/2023','Aniversario da minha mãe e da Paula'),
-    ]
+    return this.tarefaService.listarTarefas()
+  }
+
+  remover($event:any,tarefa:Tarefa):void{
+    $event.preventDefault();
+    if(confirm(`Deseja realmente remover a tarefa ${tarefa.titulo}?`)){
+      this.tarefaService.remover(tarefa.id!);
+      this.tarefas = this.listarTarefas();
+    }
   }
 
 }
