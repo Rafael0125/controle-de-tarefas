@@ -11,6 +11,7 @@ import { TarefaSevice } from '../tarefa.service';
 export class TelaInicialComponent implements OnInit {
 
   public tarefas: Tarefa[] = [];
+  public tarefasFinalizadas: Tarefa[] = []
 
   constructor( private tarefaService: TarefaSevice){ }
 

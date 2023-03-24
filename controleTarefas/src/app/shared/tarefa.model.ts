@@ -4,5 +4,6 @@ export class Tarefa {
         public titulo?:string,
         public data?:string,
         public descricao?:string,
+        public conclusao?:string
     ){}
 }

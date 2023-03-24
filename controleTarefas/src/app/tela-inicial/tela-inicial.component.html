@@ -15,22 +15,22 @@
 
                     <div class="row border border-success rounded m-1 p-1 justify-content-center" 
                     *ngFor="let tarefa of tarefas">                        
-                        <div class="row border text-center ">
-                            <h4>Tarefa : {{tarefa.titulo}}</h4>
+                        <div class="row border-bottom border-dark text-center ">
+                            <p class="tituloTarefaNgFor">Titulo : {{tarefa.titulo}}</p>
                         </div>
                         <div class="row p-2">
                             <div class="col-4">
-                                <button class="btn btn-primary">
-                                    Acessar
+                                <button class="btn btn-primary btn-sm" [routerLink]="['/editar-tarefa', tarefa.id]">
+                                    Editar
                                 </button>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-success">
+                                <button class="btn btn-success btn-sm">
                                     Finalizar
                                 </button>
                             </div>
                             <div class="col-4">
-                                <button type="button" class="btn btn-danger" (click)="remover($event,tarefa)">
+                                <button type="button" class="btn btn-danger btn-sm" (click)="remover($event,tarefa)">
                                     Excluir
                                 </button>
                             </div>

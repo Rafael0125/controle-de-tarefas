@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Tarefa } from "./shared/tarefa.model";
 
 const LS_CHAVE:string = 'tarefas'
+const LS_CONCLUIDAS:string = 'tarefaFinalizadas'
 
 
 @Injectable({
@@ -42,4 +43,20 @@ export class TarefaSevice{
         tarefas = tarefas.filter(tarefa => tarefa.id !== id)
         localStorage[LS_CHAVE] = JSON.stringify(tarefas)
     }
+
+    listarTarefasFinalizadas():Tarefa[]{
+        const tarefasFinalizadas = localStorage[LS_CONCLUIDAS]
+        return tarefasFinalizadas ? JSON.parse(tarefasFinalizadas):[];
+    }
+
+    finalizar(tarefaFinalizada:Tarefa):void{
+        const tarefasFinalizadas = this.listarTarefasFinalizadas()
+        tarefasFinalizadas.push(tarefaFinalizada)
+        localStorage[LS_CONCLUIDAS] = JSON.stringify(tarefasFinalizadas)
+    }
+
+
+
+
+
 }

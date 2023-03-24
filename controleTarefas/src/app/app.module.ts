@@ -9,13 +9,17 @@ import { MenuComponent } from './menu/menu.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { InserirTarefaComponent } from './inserir-tarefa/inserir-tarefa.component';
 import { TarefaSevice } from './tarefa.service';
+import { EditarTarefaComponent } from './editar-tarefa/editar-tarefa.component';
+import { FinalizarTarefaComponent } from './finalizar-tarefa/finalizar-tarefa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     TelaInicialComponent,
-    InserirTarefaComponent
+    InserirTarefaComponent,
+    EditarTarefaComponent,
+    FinalizarTarefaComponent
   ],
   imports: [
     BrowserModule,
