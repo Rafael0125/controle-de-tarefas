@@ -7,12 +7,12 @@
 
             <div class="table-responsive-lg">
             <table class="table table-white table-bordered table-hover align-middle">
-                <thead class="table-secondary table-bordered table-hover align-middle">
+                <thead class="table-secondary table-bordered table-hover align-middle text-center">
                     <tr class="">
                         <th>Titulo da tarefa</th>
                         <th>Data da tarefa</th>
                         <th>Descrição da tarefa</th> 
-                        <th colspan="3" class="text-center">
+                        <th colspan="3">
                             <a href="#" [routerLink]="['/inserir-tarefa']" class="btn btn-success">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Nova Tarefa
                             </a>
@@ -20,9 +20,9 @@
                     </tr>
 
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                     <tr *ngFor="let tarefa of tarefas"> <!--  -->
-                        <td>
+                        <td >
                             {{tarefa.titulo | descricaoReduzida:20:3}}
                         </td>
                         <td>
