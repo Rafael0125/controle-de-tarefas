@@ -19,13 +19,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link active" routerLinkActive='active' href="#">Pagina inicial</a>
+                        <a class="nav-link" routerLinkActive='active' href="#" [routerLink]="['tela-inicial']">Pagina inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tarefas Ativas </a>
+                        <a class="nav-link" routerLinkActive='active' href="#" [routerLink]="['lista-tarefas']">Tarefas Ativas </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Historico de tarefas </a>
+                        <a class="nav-link" routerLinkActive='active' href="#">Historico de tarefas </a>
                     </li>
                 </ul>
             </div>

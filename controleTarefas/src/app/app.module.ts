@@ -12,6 +12,7 @@ import { TarefaSevice } from './tarefa.service';
 import { EditarTarefaComponent } from './editar-tarefa/editar-tarefa.component';
 import { FinalizarTarefaComponent } from './finalizar-tarefa/finalizar-tarefa.component';
 import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
+import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
     InserirTarefaComponent,
     EditarTarefaComponent,
     FinalizarTarefaComponent,
-    ListaTarefaComponent
+    ListaTarefaComponent,
+    DescricaoReduzida
   ],
   imports: [
     BrowserModule,

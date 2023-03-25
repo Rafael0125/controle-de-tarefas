@@ -29,7 +29,7 @@ export class TelaInicialComponent implements OnInit {
 
   remover($event:any,tarefa:Tarefa):void{
     $event.preventDefault();
-    if(confirm(`Deseja realmente remover a tarefa ${tarefa.titulo}?`)){
+    if(confirm(`Deseja realmente remover a tarefa: ${tarefa.titulo}?`)){
       this.tarefaService.remover(tarefa.id!);
       this.tarefas = this.listarTarefas();
     }
