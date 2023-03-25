@@ -12,34 +12,40 @@
         <div class="col-lg-4 text-center"> <!-- Segunda Coluna // Inicio -->
                 <h3 class=""> Tarefas Ativas </h3>
 
+                <div class="row m-1 border border-dark">
+                    <div class="col-12">
 
-                    <div class="row border border-success rounded m-1 p-1 justify-content-center" 
-                    *ngFor="let tarefa of tarefas">                        
-                        <div class="row border-bottom border-dark text-center ">
-                            <p class="tituloTarefaNgFor">Titulo : {{tarefa.titulo}}</p>
-                        </div>
-                        <div class="row p-2">
-                            <div class="col-4">
-                                <button class="btn btn-primary btn-sm" [routerLink]="['/editar-tarefa', tarefa.id]">
-                                    Editar
-                                </button>
+                        <div class="row border border-success rounded m-1 p-1 justify-content-center" *ngFor="let tarefa of tarefas">                        
+                            <div class="row border-bottom border-dark text-center ">
+                                <p class="tituloTarefaNgFor">Titulo : {{tarefa.titulo}}</p>
                             </div>
-                            <div class="col-4">
-                                <button class="btn btn-success btn-sm" [routerLink]="['/finalizar-tarefa', tarefa.id]" >
-                                    Finalizar
-                                </button>
+                            <div class="row p-2">
+                                <div class="col-4">
+                                    <button class="btn btn-primary btn-sm" [routerLink]="['/editar-tarefa', tarefa.id]">
+                                        Editar
+                                    </button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-success btn-sm" [routerLink]="['/finalizar-tarefa', tarefa.id]" >
+                                        Finalizar
+                                    </button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-danger btn-sm" (click)="remover($event,tarefa)">
+                                        Excluir
+                                    </button>
+                                </div>
+
                             </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-danger btn-sm" (click)="remover($event,tarefa)">
-                                    Excluir
-                                </button>
-                            </div>
+                            
+                            
 
                         </div>
-                        
-                        
+
 
                     </div>
+                </div>
+
 
 
             
@@ -48,7 +54,7 @@
         <div class="col-lg-5 mx-0 mx-lg-2"> <!-- Terceira Coluna // Inicio -->
 
             <div class="row m-1 border border-dark text-center">
-                <h3> Historico de tarefas </h3>
+                <h4> Historico de tarefas finalizadas </h4>
                 <table class="table table-striped table-bordered table-hover">
                     <tbody>
                         <tr>
@@ -56,7 +62,7 @@
                             <th>Data da tarefa</th>
                             <!--<th></th>-->
                         </tr>
-                        <tr *ngFor="let tarefa of tarefas">
+                        <tr *ngFor="let tarefa of tarefasFinalizadas">
                             <td>
                                 {{tarefa.titulo}}
                             </td>

@@ -17,10 +17,14 @@ export class TelaInicialComponent implements OnInit {
 
   ngOnInit(): void {
     this.tarefas = this.listarTarefas()
+    this.tarefasFinalizadas = this.listarTarefasFinalizadas()
   }
 
   listarTarefas(): Tarefa[]{
     return this.tarefaService.listarTarefas()
+  }
+  listarTarefasFinalizadas():Tarefa[]{
+    return this.tarefaService.listarTarefasFinalizadas()
   }
 
   remover($event:any,tarefa:Tarefa):void{
