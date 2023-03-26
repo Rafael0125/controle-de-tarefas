@@ -1,1 +1,49 @@
-<p>historico-tarefa works!</p>
+<div class="container-fluid">
+    <div class="row text-center">
+        
+        <h2> Historico de tarefas finalizadas </h2>
+
+        <div class="table-responsive" >
+
+            <table class="table table-striped table-bordered table-hover align-middle text-center">
+                <tbody>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Data de criação</th>
+                        <th>Descrição</th>
+                        <th>Data de conclusão</th>
+                        <th>Conclusão</th>
+                        <th></th>
+
+                        <!--<th></th>-->
+                    </tr>
+                    <tr *ngFor="let tarefa of tarefasFinalizadas"> <!--  -->
+                        <td>
+                            {{tarefa.titulo | descricaoReduzida:15:3}}
+                        </td>
+                        <td>
+                            {{tarefa.data | date : 'dd/MM/yyyy'}}
+                        </td>
+                        <td>
+                            {{tarefa.descricao | descricaoReduzida:15:3}}
+                        </td>
+                        <td>
+                            {{tarefa.dataConclusao | date : 'dd/MM/yyyy'}}
+                        </td>
+                        <td>
+                            {{tarefa.conclusao | descricaoReduzida:15:3}}
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm">
+                                Acessar tarefa
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+        </div>
+
+    </div>
+</div>
