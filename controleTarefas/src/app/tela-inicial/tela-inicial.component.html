@@ -12,12 +12,12 @@
         <div class="col-lg-4 text-center"> <!-- Segunda Coluna // Inicio -->
                 <h3 class=""> Tarefas Ativas </h3>
 
-                <div class="row m-1 border border-dark">
+                <div class="row m-1">
                     <div class="col-12">
 
-                        <div class="row border border-success rounded m-1 p-1 justify-content-center" *ngFor="let tarefa of tarefas">                        
+                        <div class="row border border-dark rounded m-1 p-1 justify-content-center" *ngFor="let tarefa of tarefas">                        
                             <div class="row border-bottom border-dark text-center ">
-                                <p class="tituloTarefaNgFor">Titulo : {{tarefa.titulo | descricaoReduzida:15:3}}</p>
+                                <p class="tituloTarefaNgFor">Titulo : {{tarefa.titulo | descricaoReduzida:20:0}}</p>
                             </div>
                             <div class="row p-2">
                                 <div class="col-4">
@@ -121,6 +121,9 @@
 
 </div>
 
+
+<label for="appt">Select a time:</label>
+<input type="time" id="appt" name="appt">
 
 
 
