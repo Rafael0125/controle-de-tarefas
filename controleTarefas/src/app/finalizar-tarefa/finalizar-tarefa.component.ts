@@ -37,9 +37,7 @@ export class FinalizarTarefaComponent {
   finalizar($event:any,tarefa:Tarefa):void{
     if(this.formTarefa.form.valid){
       this.tarefaService.finalizar(this.tarefa)
-      this.tarefaService.remover(tarefa.id!);
-
-      
+      this.tarefaService.remover(tarefa.id!);      
       this.router.navigate(['/tela-inicial'])
     }
   }

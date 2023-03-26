@@ -19,22 +19,23 @@
                     </tr>
                     <tr *ngFor="let tarefa of tarefasFinalizadas"> <!--  -->
                         <td>
-                            {{tarefa.titulo | descricaoReduzida:15:3}}
+                            {{tarefa.titulo | descricaoReduzida:15:0}}
                         </td>
                         <td>
                             {{tarefa.data | date : 'dd/MM/yyyy'}}
                         </td>
                         <td>
-                            {{tarefa.descricao | descricaoReduzida:15:3}}
+                            {{tarefa.descricao | descricaoReduzida:15:0}}
                         </td>
                         <td>
                             {{tarefa.dataConclusao | date : 'dd/MM/yyyy'}}
                         </td>
                         <td>
-                            {{tarefa.conclusao | descricaoReduzida:15:3}}
+                            {{tarefa.conclusao | descricaoReduzida:15:0}}
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-sm">
+                            <button type="button" class="btn btn-secondary btn-sm" 
+                            (click)="abrirModalTarefa(tarefa)">
                                 Acessar tarefa
                             </button>
                         </td>

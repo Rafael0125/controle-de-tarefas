@@ -14,6 +14,7 @@ import { FinalizarTarefaComponent } from './finalizar-tarefa/finalizar-tarefa.co
 import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
 import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
 import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.component';
+import { ModalTarefaComponent } from './historico-tarefa/modal-tarefa/modal-tarefa.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.co
     FinalizarTarefaComponent,
     ListaTarefaComponent,
     DescricaoReduzida,
-    HistoricoTarefaComponent
+    HistoricoTarefaComponent,
+    ModalTarefaComponent
   ],
   imports: [
     BrowserModule,

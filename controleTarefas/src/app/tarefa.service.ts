@@ -59,6 +59,13 @@ export class TarefaSevice{
         localStorage[LS_CONCLUIDAS] = JSON.stringify(tarefasFinalizadas)
     }
 
+    removerTarefasFinalizadas(id:number) : void{
+        let tarefas : Tarefa[] = this.listarTarefasFinalizadas()
+        tarefas = tarefas.filter(tarefa => tarefa.id !== id)
+        localStorage[LS_CONCLUIDAS] = JSON.stringify(tarefas)
+    }
+
+
 
 
 
