@@ -5,6 +5,7 @@ import { InserirTarefaComponent } from './inserir-tarefa/inserir-tarefa.componen
 import { EditarTarefaComponent } from './editar-tarefa/editar-tarefa.component';
 import { FinalizarTarefaComponent } from './finalizar-tarefa/finalizar-tarefa.component';
 import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
+import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.component';
 
 const routes: Routes = [
   {path: '',redirectTo:'tela-inicial', pathMatch:'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'inserir-tarefa',component:InserirTarefaComponent},
   {path: 'editar-tarefa/:id', component:EditarTarefaComponent},
   {path: 'finalizar-tarefa/:id', component:FinalizarTarefaComponent},
-  {path: 'lista-tarefas',component:ListaTarefaComponent}
+  {path: 'lista-tarefas',component:ListaTarefaComponent},
+  {path: 'historico-tarefas',component:HistoricoTarefaComponent}
 ];
 
 @NgModule({

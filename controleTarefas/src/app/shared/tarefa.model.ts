@@ -4,6 +4,8 @@ export class Tarefa {
         public titulo?:string,
         public data?:string,
         public descricao?:string,
-        public conclusao?:string
+
+        public conclusao?:string,
+        public dataConclusao?:string
     ){}
 }

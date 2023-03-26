@@ -13,6 +13,7 @@ import { EditarTarefaComponent } from './editar-tarefa/editar-tarefa.component';
 import { FinalizarTarefaComponent } from './finalizar-tarefa/finalizar-tarefa.component';
 import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
 import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
+import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
     EditarTarefaComponent,
     FinalizarTarefaComponent,
     ListaTarefaComponent,
-    DescricaoReduzida
+    DescricaoReduzida,
+    HistoricoTarefaComponent
   ],
   imports: [
     BrowserModule,

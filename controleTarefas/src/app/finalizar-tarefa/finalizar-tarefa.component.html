@@ -73,7 +73,29 @@
                     </div>
                 </div>
 
-                <div class="form-group border border-danger p-1 text-center">
+                <div class="form-group col-6 mb-3"> <!-- Data conclusão -->
+                    <label for="dataConclusao">Data da conclusão da tarefa</label>
+                    <input type="date" name="dataConclusao" id="dataConclusao" class="form-control"
+                    [(ngModel)]="tarefa.dataConclusao" #dataConclusao="ngModel" minlength="10" required>
+                    <div *ngIf="dataConclusao.errors && (dataConclusao.dirty || dataConclusao.touched)"> <!-- ngIf -->
+                        <div class="alert alert-danger">
+                            <div [hidden]="!dataConclusao.errors?.['required']"> <!-- [hidden] -->
+                                Insira a data da conclusão da tarefa 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="form-group p-1 text-center">
 
                     <a href="#" class="btn btn-secondary mx-1">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar

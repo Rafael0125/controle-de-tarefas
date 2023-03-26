@@ -44,6 +44,10 @@ export class TarefaSevice{
         localStorage[LS_CHAVE] = JSON.stringify(tarefas)
     }
 
+
+
+    
+
     listarTarefasFinalizadas():Tarefa[]{
         const tarefasFinalizadas = localStorage[LS_CONCLUIDAS]
         return tarefasFinalizadas ? JSON.parse(tarefasFinalizadas):[];
