@@ -9,7 +9,7 @@ import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.co
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 
 const routes: Routes = [
-  {path: '',redirectTo:'tela-inicial', pathMatch:'full'},
+  {path: '',redirectTo:'login', pathMatch:'full'},
   {path: 'tela-inicial',component:TelaInicialComponent},
   {path: 'inserir-tarefa',component:InserirTarefaComponent},
   {path: 'editar-tarefa/:id', component:EditarTarefaComponent},
