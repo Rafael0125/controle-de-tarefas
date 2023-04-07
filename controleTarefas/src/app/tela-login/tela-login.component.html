@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row linha-central m-1">
+        <div class="col-md-7 letreiro"> <!-- Letreiro -->
+            <div class="row my-1 mt-4 mb-3">
+                <div class="col-md-6 offset-1">
+                    <h1>
+                        Lista de Tarefas
+                    </h1>
+
+                </div>
+                
+            </div>
+            <div class="row mt-4 justify-content-end descricao">
+                <div class="col-md-9 text-end">
+                    <p class="">
+                        Mantenha o controle na sua rotina de maneira simples e intuitiva.
+                    </p>
+                    <hr>
+                    <p class="">
+                        Melhore sua produtividade e consiga se organizar da maneira que achar melhor.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 formulario-entrada"> <!-- Formulario de entrada -->
+            <div class="row">
+                <div id="formulario-login" class="col-8 offset-2 " >
+                    <form>
+                        <div class="form-group my-1"> <!-- Usuario - Email // Inicio -->
+                            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nome de usuário ou E-mail" aria-describedby="usuario-aviso">
+                            <div> <!-- ngIf *ngIf="titulo.errors && (titulo.dirty || titulo.touched)"-->
+                                <div id="usuario-aviso" class="form-text text-danger">
+                                    <div> <!-- [hidden] [hidden]="!titulo.errors?.['required']"-->
+                                        Insira o nome de usuario ou email 
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Usuario - Email // Fim -->
+
+                        <div class="form-group my-1"> <!-- Senha // Inicio -->
+                            <input class="form-control" type="text" name="senha" id="senha" placeholder="Senha" aria-describedby="senha-aviso">
+                            <div> <!-- ngIf *ngIf="titulo.errors && (titulo.dirty || titulo.touched)"-->
+                                <div id="senha-aviso" class="form-text text-danger">
+                                    <div> <!-- [hidden] [hidden]="!titulo.errors?.['required']"-->
+                                        Insira sua senha 
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Senha // Fim -->
+
+                        <div class="d-grid gap-2 form-group text-center col-10 offset-1 mt-3">
+                            <button class="btn btn-primary" type="button">Entrar</button>
+                            <a href="esqueceuSenha">Esqueceu a senha?</a>    
+                        </div>
+                    </form>
+
+                    <div class="d-grid gap-2 form-group text-center col-10 offset-1">
+                        <button class="btn btn-success" type="button">Criar Conta</button>
+                    </div>    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

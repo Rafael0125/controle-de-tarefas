@@ -1,0 +1,30 @@
+
+.linha-central{
+    height: 450px;
+}
+
+.letreiro{
+    font-family:Arial, Helvetica, sans-serif;
+}
+.letreiro h1{
+    font-size: 46px;
+    font-weight: 600;
+}
+.letreiro .descricao{
+    font-size: 30px;
+}
+
+.formulario-entrada{
+    margin: auto;
+}
+
+#formulario-login{
+    border: 1px solid #000;
+    background-color: #d4d4d4;
+
+    color: #fff;
+    border-radius: 10px;
+    height: 400px;
+    display: grid;
+    align-items: center;
+}

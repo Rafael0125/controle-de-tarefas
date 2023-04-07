@@ -15,6 +15,7 @@ import { ListaTarefaComponent } from './lista-tarefa/lista-tarefa.component';
 import { DescricaoReduzida } from './shared/descricao-reduzida.pipe';
 import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.component';
 import { ModalTarefaComponent } from './historico-tarefa/modal-tarefa/modal-tarefa.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ModalTarefaComponent } from './historico-tarefa/modal-tarefa/modal-tare
     ListaTarefaComponent,
     DescricaoReduzida,
     HistoricoTarefaComponent,
-    ModalTarefaComponent
+    ModalTarefaComponent,
+    TelaLoginComponent
   ],
   imports: [
     BrowserModule,
