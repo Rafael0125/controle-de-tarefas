@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate,keyframes } from '@angular/animations';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
@@ -9,56 +9,53 @@ import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
   templateUrl: './tela-login.component.html',
   styleUrls: ['./tela-login.component.css'],
   animations:[
-    trigger('formularios',[
-      state('oculto',style({
-        //opacity:0,
-        transform:'scale(1.2)'
+    trigger('animacao-painel',[
+      state('criado', style({
+        opacity:1
       })),
-      state('visivel',style({
-        //opacity:1,
-        transform:'scale(1)'
+      transition('void => criado',[
+        style({
+          opacity:0,
+          transform:'translate(50px,0)'
+        }),
+        // 0 void ----x-----------------x--x----x--------------x criado 1.5s //
+        animate('1500ms ease-in-out', keyframes([
+          style({offset:0.15, opacity:1, transform:'translateX(0)'}),
 
-      })),
-      transition('oculto <=> visivel',animate('1s ease-in'))
+          style({offset:0.86, opacity:1, transform:'translateX(0)'}),
+
+        ])) // duração, delay e aceleração
+      ])
     ])
+
   ]
 })
 export class TelaLoginComponent implements OnInit {
 
   // Controle Animação
-  public formLogin:string ='visivel'
-  public formCadastro:string ='oculto'
-
-  public formAtivo:boolean = true
+  public estadoPainel: string = 'criado'
+  public cadastro:boolean = false
 
 
 
 
   constructor(
-    public modalService: NgbModal
   ){ }
 
   ngOnInit(): void {
     
   }
 
-  public logicaAnimacao():void{
-    if(this.formLogin === 'visivel'){
-      this.formLogin = 'oculto'
-      this.formCadastro = 'visivel'
-      //this.formAtivo = false
-      
-    } else {
-      this.formLogin = 'visivel'
-      this.formCadastro = 'oculto'
-      //this.formAtivo = true
-    }
+  public exibirPainel(event:any):void{
+    this.cadastro = event === 'cadastro' ? true : false
+  }
+  public inicioAnimacao():void{
+    //console.log('Inicio da animação')
+  }
+  public fimAnimacao():void{
+    //console.log('Fim da animação')
   }
 
-
-  abrirModalCadastro(){
-    const modalRef = this.modalService.open(FormCadastroComponent)
-  }
 
 
 

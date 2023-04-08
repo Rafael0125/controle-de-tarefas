@@ -1,71 +1,97 @@
-<div >
 
-    <div class="modal-header">
-        <div class="fs-3">
-            Crie sua conta
-        </div>
-        <button type="button" class="btn-close fs-6" aria-label="Fechar" (click)="activeModal.dismiss()">
-        </button>
+<div class="card" style="width: 20rem;">
+    <div class="card-body">
+        <div class="card-title fs-3"> Cadastro </div>
+        <hr>
 
+        <form class="" > <!-- FormCadastro -->
 
+            <div class="form-group my-1 row mb-2"> <!-- Usuario // Inicio -->
+                <input 
+                class="form-control" 
+                type="text" 
+                name="nome" 
+                id="nome" 
+                placeholder="Insire o nome" 
+                aria-describedby="usuario-aviso"
+                minlength="3" 
+                required>
 
-    </div>
-
-    <div class="modal-body " >
-        <div class="row p-1">
-            <div class="col-12">
-                <div class="row justify-content-center p-1 my-1">
-
-                    <form #formCadastro="ngForm" class="" > <!-- FormCadastro -->
-
-                        <div class="form-group my-1 row mb-2"> <!-- Usuario // Inicio -->
-                            <label for="nome" class="fs-5" >Nome de usuario</label>
-                            <input class="form-control form-control-lg" type="text" name="nome" id="nome" placeholder="Insire o nome" aria-describedby="usuario-aviso"
-                            [(ngModel)]="usuario.nome" #nome="ngModel" minlength="3" required>
-                           <div *ngIf="nome.errors && (nome.dirty || nome.touched)">  <!-- ngIf -->
-                                <div id="nome-aviso" class="form-text  text-danger">
-                                    <div [hidden]="!nome.errors?.['required']">  
-                                        Insira o nome de usuario
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- Usuario // Fim -->
-
-                        <div class="form-group my-1 row my-2"> <!--  Email // Inicio -->
-                            <label for="email" class="fs-5">Email do usuario</label>
-                            <input class="form-control form-control-lg" type="email" name="email" id="email" placeholder="Insira o Email" aria-describedby="email-aviso"
-                            [(ngModel)]="usuario.email" #email="ngModel" minlength="3" required>
-                            <div *ngIf="email.errors && (email.dirty || email.touched)"> <!-- ngIf -->
-                                <div id="email-aviso" class="form-text text-danger">
-                                    <div [hidden]="!email.errors?.['required']"> <!-- [hidden] -->
-                                        Insira o Email do usuario
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- Email // Fim -->
-
-                        <div class="form-group my-1 row mt-2"> <!-- Senha // Inicio -->
-                            <label for="senha" class="fs-5">Senha do usuario</label>
-                            <input class="form-control form-control-lg" type="password" name="senha" id="senha" placeholder="Insira a senha" aria-describedby="senha-aviso"
-                            [(ngModel)]="usuario.senha" #senha="ngModel" minlength="5" required>
-                            <div *ngIf="senha.errors && (senha.dirty || senha.touched)"> <!-- ngIf -->
-                                <div id="senha-aviso" class="form-text text text-danger">
-                                    <div [hidden]="!senha.errors?.['required']"> <!-- [hidden] -->
-                                        Insira a senha do usuario
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- Senha // Fim -->
-                    
-                        <div class="form-group d-grid gap-2 text-center col-8 offset-2 mt-3">
-                            <button class="btn btn-primary" type="button" [disabled]= "!formCadastro.form.valid">Criar Conta</button>
-                        </div> 
-                    </form>
+            <div >  <!-- ngIf *ngIf="nome.errors && (nome.dirty || nome.touched)"-->
+                    <div id="nome-aviso" class="form-text  text-danger">
+                        <div >  <!-- [hidden]="!nome.errors?.['required']" -->
+                            Insira o nome de usuario
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- Usuario // Fim -->
 
+            <div class="form-group my-1 row my-2"> <!--  Email // Inicio -->
+                <input 
+                class="form-control" 
+                type="email" 
+                name="email" 
+                id="email" 
+                placeholder="Insira o Email" 
+                aria-describedby="email-aviso"
+                minlength="3" 
+                required>
+
+                <div > <!-- ngIf *ngIf="email.errors && (email.dirty || email.touched)"-->
+                    <div id="email-aviso" class="form-text text-danger">
+                        <div > <!-- [hidden] [hidden]="!email.errors?.['required']"-->
+                            Insira o Email do usuario
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Email // Fim -->
+
+            <div class="form-group my-1 row mt-2"> <!-- Senha // Inicio -->
+                <input 
+                class="form-control" 
+                type="password" 
+                name="senha" 
+                id="senha" 
+                placeholder="Insira a senha" 
+                aria-describedby="senha-aviso"
+                minlength="5" required>
+                <div > <!-- ngIf *ngIf="senha.errors && (senha.dirty || senha.touched)"-->
+                    <div id="senha-aviso" class="form-text text text-danger">
+                        <div > <!-- [hidden] [hidden]="!senha.errors?.['required']"-->
+                            Insira a senha do usuario
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Senha // Fim -->
+
+            <div class="form-group d-grid gap-2 text-center col-8 offset-2 mt-3">
+                <button class="btn btn-primary" type="button" 
+                >Criar Conta</button> <!-- [disabled]= "!formCadastro.form.valid" -->
+            </div> 
+        </form>
     </div>
-
-
 </div>
+
+<div class="card mt-2" style="width: 20rem;">
+    <div class="card-body">
+        <p class="card-text">
+            Tem uma conta? <a href="#" (click) = 'exibirPainelLogin()' class="card-link">Faça login</a>
+
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

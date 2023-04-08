@@ -1,13 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Usuario } from 'src/app/shared/usuario.model';
 
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-
 
 @Component({
   selector: 'app-form-cadastro',
@@ -15,18 +14,20 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./form-cadastro.component.css']
 })
 export class FormCadastroComponent implements OnInit{
-  @ViewChild('formCadastro') formCadastro! : NgForm
 
-  public usuario!:Usuario
+  @Output() public exibirPainel: EventEmitter<string> = new EventEmitter<string>
 
   constructor(
-    public activeModal: NgbActiveModal,
-
   ){}
 
   ngOnInit(): void {
-    this.usuario = new Usuario()
     
   }
+
+  public exibirPainelLogin():void{
+    this.exibirPainel.emit('login')
+
+  }
+
 
 }

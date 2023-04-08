@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms'; // Formularios
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'; // Formularios
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
@@ -19,6 +19,8 @@ import { HistoricoTarefaComponent } from './historico-tarefa/historico-tarefa.co
 import { ModalTarefaComponent } from './historico-tarefa/modal-tarefa/modal-tarefa.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { FormCadastroComponent } from './tela-login/form-cadastro/form-cadastro.component';
+import { FormLoginComponent } from './tela-login/form-login/form-login.component';
+import { LetreiroComponent } from './tela-login/letreiro/letreiro.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,15 @@ import { FormCadastroComponent } from './tela-login/form-cadastro/form-cadastro.
     HistoricoTarefaComponent,
     ModalTarefaComponent,
     TelaLoginComponent,
-    FormCadastroComponent
+    FormCadastroComponent,
+    FormLoginComponent,
+    LetreiroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [

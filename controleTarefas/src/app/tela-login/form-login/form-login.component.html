@@ -1,0 +1,62 @@
+
+<div class="card" style="width: 20rem;">
+    <div class="card-body" style="width: 20rem;">
+        <div class="card-title fs-3"> Login </div>
+        <hr>
+
+        <form class="" > <!-- FormLogin -->
+            <div class="form-group my-1"> <!-- Usuario - Email // Inicio -->
+                <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nome de usuário ou E-mail" aria-describedby="usuario-aviso">
+                <div> <!-- ngIf *ngIf="titulo.errors && (titulo.dirty || titulo.touched)"-->
+                    <div id="usuario-aviso" class="form-text text-danger">
+                        <div> <!-- [hidden] [hidden]="!titulo.errors?.['required']"-->
+                            Insira o nome de usuario ou email 
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Usuario - Email // Fim -->
+
+            <div class="form-group my-1"> <!-- Senha // Inicio -->
+                <input class="form-control" type="text" name="senha" id="senha" placeholder="Senha" aria-describedby="senha-aviso">
+                <div> <!-- ngIf *ngIf="titulo.errors && (titulo.dirty || titulo.touched)"-->
+                    <div id="senha-aviso" class="form-text text-danger">
+                        <div> <!-- [hidden] [hidden]="!titulo.errors?.['required']"-->
+                            Insira sua senha 
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Senha // Fim -->
+
+            <div class="d-grid gap-2 form-group text-center col-10 offset-1 mt-3">
+                <button class="btn btn-primary" type="button">Entrar</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<div class="card mt-2" style="width: 20rem;">
+    <div class="card-body">
+        <p class="card-text">
+            Não tem uma conta? <a href="#" (click) ='exibirPainelCadastro()' class="card-link">Cadastre-se</a>
+
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
